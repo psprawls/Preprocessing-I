@@ -18,11 +18,14 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
-	padding: 0;
+	padding: 10px;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+    vertical-align: baseline;
+    text-decoration: none;
+    color: @font-color;
+    font-family: @font-style; 
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -57,3 +60,51 @@ html, body {
     height: 100%;
 }
 
+@font-color: black;
+@font-style: Arial, Helvetica, sans-serif;
+
+.font-class {
+    color: black;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+.box-class {
+    width: 100px;
+    height: 100px;
+    background: gray;
+  }
+
+.another-class {
+    display: flex;
+    justify-content: left;
+}
+  
+.example-mixin-1 {
+    .font-class();
+    .box-class();
+  }
+
+.example-mixin-2 {
+    .font-class();
+    .another-class();
+  }
+
+.some-class {
+    width: 800px;
+    background: white;
+  
+    @media (max-width: 500px) {
+      width: 100%;
+      background: gray;
+      color: white;
+    }
+  }
+
+h1{
+    font-size: 140%
+}
+
+h1{
+    font-size: 120%
+}
